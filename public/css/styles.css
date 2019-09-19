@@ -1,0 +1,19 @@
+:root {
+    --background-color: #f8cf53;
+    --main-color: #1631AB;
+    --header-font: 'Roboto Slab', serif;
+    --body-font: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--main-color);
+    font-family: var(--body-font)
+}
+h1, h2, h3, h4 {
+    font-family: var(--header-font)
+}
+.creator-img{
+    width: 250px;
+}
+
