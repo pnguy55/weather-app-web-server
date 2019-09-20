@@ -8,10 +8,19 @@
 body {
     background-color: var(--background-color);
     color: var(--main-color);
-    font-family: var(--body-font)
+    font-family: var(--body-font);
 }
 h1, h2, h3, h4 {
-    font-family: var(--header-font)
+    font-family: var(--header-font);
+}
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+}
+.nav-bar > a {
+    display: flex;
+    flex: 1;
+    text-decoration: none;
 }
 .creator-img{
     width: 250px;
