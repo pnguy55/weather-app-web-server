@@ -1,6 +1,7 @@
 const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
+const weather_lookup = require('./modules/weather-lookup')
 
 const app = express()
 
@@ -18,19 +19,23 @@ hbs.registerPartials(partialsPath)
 app.use(express.static(publicDirectoryPath))
 
 //Some variables
+let logo_text = 'Weather App'
 let author = 'Created by Phi Nguyen'
+
 
 
 app.get('', (req,res) => {
     res.render('index', {
         title: 'Weather App',
+        logo_text: logo_text,
         name: author
     })
 })
 
 app.get('/about', (req,res) => {
     res.render('about', {
-        title: 'Purpose of the Weather App',
+        title: 'About',
+        logo_text: logo_text,
         name: author
     })
 })
@@ -38,20 +43,28 @@ app.get('/about', (req,res) => {
 app.get('/help', (req, res) => {
     res.render('help', {
         title: 'FAQ',
-        name: author,
-        helpText: 'This is some helpful text'
+        logo_text: logo_text,
+        helpText: 'This is some helpful text',
+        name: author
     })
 })
 
 app.get('/weather', (req, res) => {
-    res.send({
-        forecast: 'It is snowing',
-        location: 'Philidelphia'
-    })
+    if (!req.query.location){
+        res.send({
+            error: 'You must provide a location'
+        })
+    }
+    else {
+        weather_lookup(req.query.location,res)
+    }
 })
+
+
 app.get('/help/*', (req, res) => {
     res.render('404', {
         title: 'Help 404',
+        logo_text: logo_text,
         bodyOf404: 'Help article not found',
         name: author
     })
@@ -59,6 +72,7 @@ app.get('/help/*', (req, res) => {
 app.get('*', (req, res) => {
     res.render('404', {
         title: '404',
+        logo_text: logo_text,
         bodyOf404: 'This is my 404 page',
         name: author
     })

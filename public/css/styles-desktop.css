@@ -1,0 +1,7 @@
+.nav-bar{
+    flex-direction: row;
+}
+.inner-body{
+    align-items: flex-start;
+    margin: 5rem 1rem 1rem 1rem;
+}
