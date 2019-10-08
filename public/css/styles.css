@@ -1,5 +1,5 @@
 :root {
-    --background-color: #f8cf53;
+    --background-color: #ffffff;
     --main-color: #1631AB;
     --header-font: 'Roboto Slab', serif;
     --body-font: 'Open Sans', sans-serif;
@@ -16,15 +16,27 @@ h1, h2, h3, h4 {
     font-family: var(--header-font);
 }
 .nav-bar{
+    position: fixed;
+    top: 0px;
     display: flex;
+    width: 100%;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     background-color: var(--main-color);
     color: var(--background-color);
 }
 .nav-bar-logo-wrapper{
+    display: flex;
+    align-items: center;
+}
+.nav-bar-logo-wrapper > h1{
     padding: .5em 1em;
 }
+.nav-bar-logo-wrapper > .weather-logo{
+    width: 50px;
+    margin-left: 1rem;
+} 
 .nav-bar-link-wrapper {
     display: flex;
     display: space-around;
@@ -43,7 +55,61 @@ h1, h2, h3, h4 {
     color: var(--main-color);
     border-radius: 4px;
 }
+.inner-body{
+    margin: 8rem 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.body-of-text{
+    margin: 1rem 5% 1rem 5%;
+}
+.error-text{
+    font-size: 2.5rem;
+    font-weight: 900;
+    padding: 1rem;
+    background-color: var(--main-color);
+    color: var(--background-color);
+    border-radius: 12px;
+}
+.inner-body > img{
+    max-width: 95%;
+    max-height: 95%;
+}
 .creator-img{
     width: 250px;
 }
-
+footer{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+    margin-top: 1rem;
+}
+.credits-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+    padding: 0px .5rem;
+    font-weight: 900;
+    border-radius: 12px;
+}
+.credits{
+    color: var(--main-color);
+    margin: 1rem .5rem;
+}
+.weather-logo-decorator{
+    height: 2rem;
+}
+@media screen and (min-width: 975px) {
+    .nav-bar{
+        flex-direction: row;
+    }
+    .inner-body{
+        align-items: flex-start;
+        margin: 5rem 1rem 1rem 1rem;
+    }
+}
