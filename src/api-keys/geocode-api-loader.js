@@ -19,10 +19,10 @@ let geocode_api_loader = (cityName, callback) => {
             callback('Location not valid', undefined)
         } else {
             let coordinates = geocode_response.results[0].geometry.location
-            
+            let formatted_location = geocode_response.results[0].formatted_address
             let lat_and_long = '/' + coordinates.lat.toFixed(4) + ',' + coordinates.lng.toFixed(4)
             
-            callback(undefined, lat_and_long)
+            callback(undefined, lat_and_long, formatted_location)
         }
         
     })

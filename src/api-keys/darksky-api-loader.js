@@ -6,7 +6,7 @@ let api_key_getter = require('./api-key-getter')
 let loaded_api_keys = api_key_getter()
 let darksky_key = loaded_api_keys[0].darksky
 //function that requests data from the darksky API
-let darksky_api_loader = (lat_and_long, callback) => {
+let darksky_api_loader = (lat_and_long, formatted_location, callback) => {
     //url variable
     let darksky_api_url = 'https://api.darksky.net/forecast/'+ darksky_key + lat_and_long
 
@@ -16,7 +16,7 @@ let darksky_api_loader = (lat_and_long, callback) => {
         } else if (darksky_response.error) { 
             callback('Unable to show location', undefined, undefined)
         } else {
-            callback(undefined, darksky_response)
+            callback(undefined, darksky_response, formatted_location)
         }
     })
     

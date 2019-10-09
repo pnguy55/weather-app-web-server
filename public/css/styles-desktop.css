@@ -1,7 +1,22 @@
 .nav-bar{
     flex-direction: row;
+    height: 5rem;
+}
+.nav-bar-link-wrapper > a{
+    background-color: rgba(0,0,0,0);
+    height: 100%;
+}
+.nav-bar-link-wrapper > a:nth-child(2){
+    border-right: 1px solid var(--background-color);
+    border-left: 1px solid var(--background-color);
 }
 .inner-body{
     align-items: flex-start;
-    margin: 5rem 1rem 1rem 1rem;
+    margin: 1rem 1rem 1rem 1rem;
+}
+.weather-form{
+    width: 40%;
+}
+.weather-results-wrapper{
+    width: 40%;
 }

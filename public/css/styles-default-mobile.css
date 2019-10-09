@@ -3,29 +3,38 @@
     --main-color: #1631AB;
     --lighter-shade: #1835B8;
     --darker-shade: #0E1F6B;
+    --gray: rgba(0,0,0,.70);
     --header-font: 'Roboto Slab', serif;
     --body-font: 'Open Sans', sans-serif;
 }
 *{
     margin: 0;
 }
+.hide{
+    display: none;
+}
+.show{
+    display: flex;
+}
 body {
-    background-color: var(--background-color);
+    background-image: url('/assets/little_tree.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     color: var(--main-color);
     font-family: var(--body-font);
+    min-height: 100vh;
 }
 h1, h2, h3, h4 {
     font-family: var(--header-font);
 }
 .nav-bar{
-    position: fixed;
-    top: 0px;
     display: flex;
     width: 100%;
+    height: 8rem;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--main-color);
     color: var(--background-color);
 }
 .nav-bar-logo-wrapper{
@@ -49,29 +58,49 @@ h1, h2, h3, h4 {
     padding: .5em 1em;
     flex: 1;
     text-decoration: none;
+    background-color: var(--darker-shade);
     color: var(--background-color);
     font-family: var(--header-font);
     font-weight: 900px;
+    border-radius: 0px 0px 4px 4px;
+}
+.nav-bar-link-wrapper > a:nth-child(2){
+    border-right: 1px solid var(--background-color);
+    border-left: 1px solid var(--background-color);
 }
 .nav-bar-link-wrapper > a:hover{
-    background-color: var(--background-color);
-    color: var(--main-color);
-    border-radius: 4px;
+    background-color: var(--main-color);
+    color: var(--background-color);
+    border-radius: 0px 0px 4px 4px;
 }
 .inner-body{
-    margin: 8rem 1rem 1rem 1rem;
+    margin: 1rem 1rem 1rem 1rem;
     display: flex;
+    min-height: 60vh;
     flex-direction: column;
     align-items: center;
-}
-.weather-button-wrapper{
-    width: 100%;
-    display: flex;
     justify-content: center;
+}
+.weather-form-wrapper{
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+.weather-form{
+    width: 50%;
+    height: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.weather-form > input {
+    font-size: 2rem;
+    border: 1px solid var(--background-color);
+    border-radius: 4px;
 }
 .weather-button{
-    display: flex;
-    justify-content: center;
     width: 10rem;
     padding: .5rem;
     border: none;
@@ -88,6 +117,29 @@ h1, h2, h3, h4 {
 .weather-button:hover{
     background-color: var(--darker-shade);
 }
+
+/*Weather results start*/
+.weather-results-panel{
+    width: 100%;
+    justify-content: center;
+    padding: 2rem 0rem;
+}
+.weather-results-wrapper{
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 4px;
+    background-color: var(--gray);
+    color: var(--background-color);
+    padding: 1rem;
+}
+.weather-results-wrapper > h1{
+    padding-bottom: 1rem;
+}
+
+/*Weather results end*/
+
 .body-of-text{
     margin: 1rem 5% 1rem 5%;
 }
@@ -112,29 +164,50 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--main-color);
     margin-top: 1rem;
 }
 .credits-wrapper{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--background-color);
-    color: var(--main-color);
+    background-color: var(--main-color);
+    color: var(--background-color);
     padding: 0px .5rem;
     font-weight: 900;
     text-decoration: none;
-    border: solid var(--background-color) 2px;
+
     border-radius: 12px;
 }
 .credits-wrapper:hover {
-    background-color: var(--main-color);
-    color: var(--background-color);
-    border-color: var(--background-color);
+    background-color: var(--darker-shade);
 }
 .credits{
     margin: 1rem .5rem;
 }
 .weather-logo-decorator{
     height: 2rem;
+}
+
+/* Weather icon sprite classes */
+#weather-icon-sprites{
+    position: relative;
+    background-image: url("/assets/weather-icons/weather-icons.png");
+    background-size: 200%;
+    width: 100%;
+    padding-top: 90.59%;
+}
+.clear-day, .clear-night{
+    background-position: top left;
+} 
+.rain{
+    background-position: center right;
+} 
+.snow, .sleet{
+    background-position: bottom left;
+}
+.wind, .fog, .cloudy{
+    background-position: center left;
+} 
+.partly-cloudy-day, .partly-cloudy-night{
+    background-position: top right;
 }

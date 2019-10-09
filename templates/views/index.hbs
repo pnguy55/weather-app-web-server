@@ -2,16 +2,20 @@
 
 <html>
 <head>
-    {{>styles_scripts}}
+    {{>styles}}
 </head>
 
 <body>
     {{>header}}
     <div class='inner-body'>
-            <div class='weather-button-wrapper'>
-                {{>get_weather}}
-            </div>
+        <div class='weather-results-panel hide'>
+            {{>weather_results}}
+        </div>
+        <div class='weather-form-wrapper show'>
+            {{>get_weather}}
+        </div>
     </div>
 </body>
 {{>footer}}
+
 </html>
