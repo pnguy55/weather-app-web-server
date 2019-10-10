@@ -97,6 +97,7 @@ h1, h2, h3, h4 {
 }
 .weather-form > input {
     font-size: 2rem;
+    width: 80%;
     border: 1px solid var(--background-color);
     border-radius: 4px;
 }
