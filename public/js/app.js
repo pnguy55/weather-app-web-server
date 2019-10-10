@@ -16,14 +16,22 @@ weatherForm.addEventListener('submit', (e) => {
 
     const formattedCityName = search.value.replace(' ','+')
 
-    fetch('http://localhost:3000/weather?location=' + formattedCityName).then((response) => {
+    fetch('/weather?location=' + formattedCityName).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 console.log(data.error)
+                form_results_panel.classList.remove('hide')
+                form_results_panel.classList.add('show')
+                form_results_icon.classList.add('hide')
+                form_results.classList.add('hide')
+
+                form_results_title.textContent = data.error + '. Please try again.'
             }
             else {
                 form_results_panel.classList.remove('hide')
                 form_results_panel.classList.add('show')
+                form_results_icon.classList.remove('hide')
+                form_results.classList.remove('hide')
 
                 form_results_icon.innerHTML = '<div id="weather-icon-sprites"></div><h3>' + data.currently.summary + '</h3>'
                 
