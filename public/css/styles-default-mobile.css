@@ -103,7 +103,8 @@ h1, h2, h3, h4 {
 }
 .weather-button{
     width: 10rem;
-    padding: 1rem 0rem .5rem 0rem;
+    padding: .5rem;
+    margin-top: 1rem;
     border: none;
     border-radius: 40px;
     background-color: var(--main-color);
