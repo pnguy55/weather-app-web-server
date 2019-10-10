@@ -103,7 +103,7 @@ h1, h2, h3, h4 {
 }
 .weather-button{
     width: 10rem;
-    padding: .5rem;
+    padding: 1rem 0rem .5rem 0rem;
     border: none;
     border-radius: 40px;
     background-color: var(--main-color);
@@ -190,6 +190,9 @@ footer{
 }
 
 /* Weather icon sprite classes */
+.weather-icon-summary{
+    text-align: center;   
+}
 #weather-icon-sprites{
     position: relative;
     background-image: url("/assets/weather-icons/weather-icons.png");

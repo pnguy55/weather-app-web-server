@@ -33,7 +33,7 @@ weatherForm.addEventListener('submit', (e) => {
                 form_results_icon.classList.remove('hide')
                 form_results.classList.remove('hide')
 
-                form_results_icon.innerHTML = '<div id="weather-icon-sprites"></div><h3>' + data.currently.summary + '</h3>'
+                form_results_icon.innerHTML = '<div id="weather-icon-sprites"></div><h3 class="weather-icon-summary">' + data.currently.summary + '</h3>'
                 
 
                 document.getElementById('weather-icon-sprites').classList.add(data.currently.icon)
