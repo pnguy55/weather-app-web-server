@@ -42,15 +42,6 @@ app.get('/about', (req,res) => {
     })
 })
 
-app.get('/help', (req, res) => {
-    res.render('help', {
-        title: 'FAQ',
-        logo_text: logo_text,
-        helpText: 'This is some helpful text',
-        name: author
-    })
-})
-
 app.get('/weather', (req, res) => {
     if (!req.query.location){
         res.send({

@@ -64,10 +64,10 @@ h1, h2, h3, h4 {
     font-weight: 900px;
     border-radius: 0px 0px 4px 4px;
 }
-.nav-bar-link-wrapper > a:nth-child(2){
+.nav-bar-link-wrapper > a{
     border-right: 1px solid var(--background-color);
-    border-left: 1px solid var(--background-color);
 }
+
 .nav-bar-link-wrapper > a:hover{
     background-color: var(--main-color);
     color: var(--background-color);
@@ -211,3 +211,37 @@ footer{
 .partly-cloudy-day, .partly-cloudy-night{
     background-position: top right;
 }
+/* Weather icons sprites classes end*/
+
+/* About page css */
+.inner-body > .inner-body{
+    background-color: var(--gray);
+    color: var(--background-color);
+}
+.phi-pic{
+    height: 150px;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+.inner-body > .inner-body > p {
+    width: 80%;
+    padding: 2rem;
+}
+.tech-stack{
+    margin: .5rem;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: space-around;
+    flex-direction: column;
+    background-color: var(--background-color);
+    border-radius: 4px;
+}
+.tech-stack > li {
+    list-style-type: none;
+    margin: .5rem;
+}
+.tech-stack > li > img {
+    width: 100px;
+}
+/* About page css */
